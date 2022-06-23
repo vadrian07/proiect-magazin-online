@@ -1,0 +1,15 @@
+Pentru a porni aplicația web avem nevoie de urmatoarele:
+-Ultima versiune de Python
+-Ultima versiune de Flask
+-Un mediu virtual
+-Serverul Wamp, Xampp, Lamp.
+-Un editor de cod, de preferat Visual Studio Code.
+
+Baza de date se găsește în folderul database, din arhivă, cu denumirea de ubdrone.sql.
+Pentru a porni aplicația trebuie să intrăm în folderul UBDrone,deschidem un terminal în editorul de cod, după care 
+introducem comanda: source/venv/Scripts/activate,pentru activarea mediului virtual de lucru. Odată activat mediul virtual
+de lucru introducem comanda: python ubdrone.py
+și aplicația trebuie să pornească.
+În caz că mediul virtual nu funcționeaza și aplicația nu pornește se introduce în terminal comanda: deactivate, 
+după introducem comanda: virtualenv venv , urmată de comanda: source venv/Scripts/activate. Se vor reinstala toate modulele și librăriile 
+din Flask,Python. După ce s-a terminat instalarea reintroducem în terminal comanda python ubdrone.py.
