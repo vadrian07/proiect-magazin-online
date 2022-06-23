@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+<div class="profil">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card card-default py-2">
+                    <div class="card-header">
+                        Comenzile mele
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                {% if userupdate %}
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nr comanda</th>
+                                                <th>Nume produs</th>
+                                                <th>cantitate</th>
+                                                <th>Modalitate plata</th>
+                                                <th>Strada</th>
+                                                <th>Judet si Oras</th>
+                                                <th>telefon</th>
+                                                <th>Data comanda</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for comanda in userupdate %}
+                                            <tr>
+                                                <td>{{comanda.id}}</td>
+                                                <td>{{comanda.c_nume}}</td>
+                                                <td>{{comanda.cantitate}}</td>
+                                                <td>{{comanda.mplata}}</td>
+                                                <td>{{comanda.strada}}</td>
+                                                <td>{{comanda.adr_loc}}</td>
+                                                <td>{{comanda.telefon}}</td>
+                                                <td>{{comanda.data_comanda}}</td>
+                                            </tr>
+                                            {% endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                {% else %}
+                                <h3>Nu ai comenzi plasate.</h3>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

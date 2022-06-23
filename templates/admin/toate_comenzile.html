@@ -1,0 +1,134 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+<div id="admin-logat">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Panou de lucru</h1>
+                {% include 'includes/_flashmsg.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-list-ul fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{rand}}</div>
+                                <div>Toate Produsele</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/admin">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{randuri_utilizatori}}</div>
+                                <div>Utilizatori</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/utilizatori">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{randuri_comanda}}</div>
+                                <div>Toate comenzile</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/comenzi">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default my-4">
+                    <div class="panel-heading">
+                        <i class="fas fa-chart-area"></i>Toate comenzile
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% if userupdate %}
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Utilizator Id</th>
+                                            <th>Name</th>
+                                            <th>produs Id</th>
+                                            <th>Cantitate</th>
+                                            <th>Modalitate plata</th>
+                                            <th>Strada</th>
+                                            <th>Judet si Oras</th>
+                                            <th>telefon</th>
+                                            <th>Data comanda</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for produs in userupdate %}
+                                        <tr>
+                                            <td>{{produs.id}}</td>
+                                            <td>{{produs.id_utilizator}}</td>
+                                            <td>{{produs.c_nume}}</td>
+                                            <td>{{produs.id_produs}}</td>
+                                            <td>{{produs.cantitate}}</td>
+                                            <td>{{produs.mplata}}</td>
+                                            <td>{{produs.strada}}</td>
+                                            <td>{{produs.adr_loc}}</td>
+                                            <td>{{produs.telefon}}</td>
+                                            <td>{{produs.data_comanda}}</td>
+                                        </tr>
+                                        {% endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                {% else %}
+                                <h4>Nu exista nicio comanda</h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

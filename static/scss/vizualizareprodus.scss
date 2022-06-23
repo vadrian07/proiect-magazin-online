@@ -1,0 +1,125 @@
+$culoare-secundara: #fff;
+$placeholder: #BDBDBD;
+$albastru: #1A237E;
+$culoare-principala: #007bff;
+
+.vizualizare-produs {
+    background: white;
+    .card.mt-4 {
+      border: none;
+  }
+  @media (min-width: 768px){
+    .card-body {
+      margin-top: 60px;
+  }
+  }
+  
+  .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show > .btn-success.dropdown-toggle {
+    border: darkcyan;
+    background: darkcyan;
+  }
+  .card.card-outline-secondary.my-4 {
+    border: none;
+  }
+  .card-header {
+    background-color: white;
+    border-bottom: none;
+  }
+  i.fas.fa-cart-plus {
+    padding-right: 12px;
+    border-right: 1px solid white;
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(48%, $culoare-secundara), to(rgba(255,255,255,0)));
+    -webkit-border-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(48%, $culoare-secundara), to(rgba(255,255,255,0)));
+    -o-border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    zoom: 1;
+    border-image-slice: 1;
+    margin-left: -4px;
+  }
+  
+  i.far.fa-heart {
+    padding-right: 12px;
+    border-right: 1px solid white;
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(48%, $culoare-secundara), to(rgba(255,255,255,0)));
+    -webkit-border-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), color-stop(48%, $culoare-secundara), to(rgba(255,255,255,0)));
+    -o-border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, $culoare-secundara 48%, rgba(255,255,255,0) 100%);
+    zoom: 1;
+    border-image-slice: 1;
+    margin-left: -4px;
+  }
+  i.fas.fa-box-open {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 10px;
+    display: table;
+    margin: 0 auto;
+  }
+  i.fas.fa-truck-loading {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 10px;
+    display: table;
+    margin: 0 auto;
+  }
+  i.fas.fa-award {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 10px;
+    display: table;
+    margin: 0 auto;
+  }
+  
+  .garantie {
+    font-size: 16px !important;
+    padding: 7px 45px 5px 45px;
+    font-size: 28px !important;
+  }
+  .retur{
+    font-size: 16px !important;
+    padding: 7px 45px 5px 45px;
+    font-size: 28px !important;
+  }
+  .delivery{
+    font-size: 16px !important;
+    padding: 7px 45px 5px 45px;
+    font-size: 28px !important;
+  }
+  .gifts.d-flex.justify-content-between {
+    font-size: 22px;
+  }
+  .offset-lg-2.dark-side {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    color: darkcyan;
+    font-size: 10px;
+    padding: 0 15px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    font-family: system-ui;
+    font-size: 16px;
+    font-weight: 500;
+    overflow-x: hidden;
+  }
+  a.btn.btn-success {
+    background: darkcyan;
+    border-color: darkcyan;
+    font-family: system-ui;
+  }
+  p.card-text {
+    font-family: system-ui;
+  }
+  h3.card-title {
+    font-family: system-ui;
+  }
+  h4 {
+    font-size: 26px;
+    font-weight: 550;
+    letter-spacing: .7px;
+    margin-right: 10px;
+  }
+  }

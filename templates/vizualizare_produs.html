@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+<div class="vizualizare-produs">
+    <div class="container">
+        <div class="row">
+            {% for produs in Achizitii %}
+            <div class="col-sm-7 col-md-5 col-lg-5">
+                <div class="card mt-4">
+                    <img class="card-img-top img-fluid"
+                        src="static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}" alt="Produs"
+                        style="height: auto;">
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-7 col-lg-7">
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ produs.p_nume}}</h3>
+                        <h4>{{ produs.pret}} lei</h4>
+                        <p class="card-text">{{ produs.descriere}}</p>
+                        <a href="/{{produs.categorie}}?comanda={{produs.id}}" class="btn btn-success"> <i
+                                class="fas fa-cart-plus"></i> Adauga in cos</a>
+                        <a href="/{{produs.categorie}}?favorite={{produs.id}}" class="btn btn-success"> <i
+                                class="far fa-heart"></i> Adauga la favorite</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="container p-2 p-md-3">
+                    <div class="row">
+                        <div class="offset-lg-2 dark-side">
+                            <div class="under-cart d-flex flex-column flex-sm-row align-items-sm-center">
+                                <div class="gifts d-flex justify-content-between">
+                                    <div class="delivery">
+                                        <i class="fas fa-box-open"></i>
+                                        Deschidere colet
+                                    </div>
+                                    <div class="retur">
+                                        <i class="fas fa-truck-loading"></i>
+                                        Retur Gratuit
+                                    </div>
+                                    <div class="garantie">
+                                        <i class="fas fa-award"></i>
+                                        Garantie 12 luni
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

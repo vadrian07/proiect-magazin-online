@@ -1,0 +1,33 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+<div class="admin-autentificare">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Admin Login</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-body">
+                        <form role="form" method="post">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="parola" name="parola" type="password"
+                                        value="">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

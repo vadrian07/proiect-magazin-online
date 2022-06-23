@@ -1,0 +1,237 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox" style="max-height: 300px">
+                        <div class="carousel-item active">
+                            <a href="/Drone">
+                                <img class="d-block img-fluid" src="/static/imagini/banner-drona2.jpg" alt="Drona"
+                                    width="1100" height="300">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="/Drone">
+                                <img class="d-block img-fluid" src="/static/imagini/banner-drona1.jpg" alt="Drona"
+                                    width="1100" height="300">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="/Drone">
+                                <img class="d-block img-fluid" src="/static/imagini/banner-drona3.jpg" alt="Drona"
+                                    width="1100" height="300">
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <h3><a href="/Drone">Drone</a></h3>
+                <div class="row">
+                    {% for produs in Drone %}
+                    {% if produs.categorie == 'Drone' %}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <a href="/{{produs.categorie}}?vizualizare={{produs.id}}">
+                                <div class="card-img-top id_{{produs.id}}"
+                                    style="background: url('static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}');">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5><a class="card-title" href="javascript:void();">{{ produs.p_nume}}</a></h5>
+                                <h4>{{produs.pret}} lei</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="border p-4 mb-4" style="height: 350px">
+                    <a href="/Drone">
+                        <img class="w-100 h-100" src="/static/imagini/banner-principal.jpg" alt="Drona">
+                    </a>
+                </div>
+                <h3><a href="/Accesorii">Accesorii</a></h3>
+                <div class="row">
+                    {% for produs in Accesorii %}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <a href="/{{produs.categorie}}?vizualizare={{produs.id}}">
+                                <div class="card-img-top"
+                                    style="background: url('static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}');">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5><a class="card-title" id=""
+                                        href="/{{produs.categorie}}?vizualizare={{produs.id}}">{{ produs.p_nume}}</a>
+                                </h5>
+                                <h4>{{produs.pret}} lei</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="border p-4 mb-4" style="height: 350px">
+                    <a href="/Accesorii">
+                        <img class="w-100 h-100" src="/static/imagini/banner-accesorii.jpg" alt="Drona">
+                    </a>
+                </div>
+                <h3><a href="/Piese">Piese</a></h3>
+                <div class="row">
+                    {% for produs in Piese %}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <a href="/{{produs.categorie}}?vizualizare={{produs.id}}">
+                                <div class="card-img-top"
+                                    style="background: url('static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}');">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5><a class="card-title" href="/{{produs.categorie}}?vizualizare={{produs.id}}">{{
+                                        produs.p_nume}}</a></h5>
+                                <h4>{{produs.pret}} lei</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="border p-4 mb-4" style="height: 350px">
+                    <a href="/Piese">
+                        <img class="w-100 h-100" src="/static/imagini/parti-drona-banner.jpg" alt="Drona">
+                    </a>
+                </div>
+                <h3><a href="/Baterii">Baterii</a></h3>
+                <div class="row">
+                    {% for produs in Baterii %}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <a href="/{{produs.categorie}}?vizualizare={{produs.id}}">
+                                <div class="card-img-top"
+                                    style="background: url('static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}');">
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h5><a class="card-title" href="/{{produs.categorie}}?vizualizare={{produs.id}}">{{
+                                        produs.p_nume}}</a></h5>
+                                <h4>{{produs.pret}} lei</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="border p-4 mb-4" style="height: 350px">
+                    <a href="/Baterii">
+                        <img class="w-100 h-100" src="/static/imagini/banner-baterie-drona.jpg" alt="Drona">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="chatbot">
+            <button class="buton-chat">
+                <i class="far fa-comment-alt"></i>
+            </button>
+            <div class="row chat-window col-xs-5 col-md-3" id="fereastra-chat1" style="margin-left:10px;">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading top-bar">
+                            <div class="col-md-8 col-xs-8">
+                                <h3 class="panel-title"><span class="far fa-comment-alt"></span> Chat online</h3>
+                            </div>
+                        </div>
+                        <div class="panel-body msg_test_base">
+
+                            <div class="row msg_test base_sent">
+                                <div class="col-xs-10 col-md-10">
+                                    <div class="messages msg_sent">
+                                        <div class="box"></div>
+                                        <div class="boxed">
+                                            <div id="chatbox">
+                                                <p class="botText">
+                                                    <span>Cu ce te pot ajuta?</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group" id="text-user">
+                            <div id="text-user">
+                                <input id="mesaj_utilizator" type="text" name="obtine_mesaj"
+                                    placeholder="Scrie mesajul tau aici..." />
+                            </div>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary btn-sm" id="buton-trimitere"><i
+                                        class="far fa-paper-plane"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top-wrapper">
+    <a href="#top" class="back-to-top-link" aria-label="Scroll to Top"><i class="fas fa-angle-up"></i></a>
+</div>
+</body>
+<script>
+    const fereastra_afisare = document.querySelector('#fereastra-chat1');
+    const ButonAfisareChat = document.querySelector('.buton-chat');
+
+    ButonAfisareChat.addEventListener('click', () => {
+        fereastra_afisare.classList.toggle('show');
+    })
+
+
+    function raspuns_bot() {
+        var prelucrareText = $("#mesaj_utilizator").val();
+        var rezultatText = '<p class="mesajutilizator"><span>' + prelucrareText + "</span></p>";
+        $("#mesaj_utilizator").val("");
+        $("#chatbox").append(rezultatText);
+        document
+            .getElementById("text-user")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+        $.get("/raspuns", { obtine_mesaj: prelucrareText }).done(function (data) {
+            var botRaspuns = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botRaspuns);
+            document
+                .getElementById("text-user")
+                .scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+    }
+    $("#mesaj_utilizator").keypress(function (e) {
+        if (e.which == 13) {
+            raspuns_bot();
+        }
+    });
+    $('#buton-trimitere').click(function () {
+        raspuns_bot();
+    });
+
+</script>
+
+<body>
+    {% endblock %}

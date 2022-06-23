@@ -1,0 +1,10 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- Categorii: succes (verde), mesajinformatie (albastru), mesajavertizare (galben), eroare (rosu) -->
+  {% if messages %}
+    {% for categorie, message in messages %}
+      <div class="alert alert-{{ categorie }} alert-dismissible my-4" role="alert">
+      {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

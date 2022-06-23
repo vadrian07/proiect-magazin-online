@@ -1,0 +1,122 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+<div id="admin-logat">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Panou de lucru</h1>
+                {% include 'includes/_flashmsg.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-list-ul fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{rand}}</div>
+                                <div>Toate Produsele</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/admin">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{randuri_utilizatori}}</div>
+                                <div>Utilizatori</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/utilizatori">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="w-50">{{randuri_comanda}}</div>
+                                <div>Utilizatori</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/comenzi">
+                        <div class="panel-footer">
+                            <span class="pull-left">Vezi detalii</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default my-4">
+                    <div class="panel-heading">
+                        <i class="fas fa-chart-area"></i>Toti utilizatorii
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% if userupdate %}
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Email</th>
+                                            <th>Data Inregistrare</th>
+                                            <th>Online</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for produs in userupdate %}
+                                        <tr>
+                                            <td>{{produs.id}}</td>
+                                            <td>{{produs.email}}</td>
+                                            <td>{{produs.data_inregistrare}}</td>
+                                            <td>{{produs.online}}</td>
+                                        </tr>
+                                        {% endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                {% else %}
+                                <h4>Nu exista clienti inregistrati pe platforma</h4>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

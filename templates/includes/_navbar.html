@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="static/imagini/ubdlogo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="input-group p-0 justify-content-center">
+                <form action="/search" method="get" class="w-100 m-0">
+                    <div class="input-group-append">
+                        <input type="text" class="form-control form-control-sm" autocomplete="off" name="produs"
+                            placeholder="Cauta produsul dorit...">
+                        <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <ul class="navbar-nav ml-auto">
+                {% if session.conectat %}
+                <li class="nav-item"><a href="/profil?utilizator={{session.id_utilizator}}" class="nav-link"><span
+                            class="fas fa-shopping-cart"></span>Cosul meu</a>
+                </li>
+                <li class="nav-item"><a href="/contul_meu?utilizator={{session.id_utilizator}}" class="nav-link"><span
+                            class="fas fa-user"></span> Contul meu</a></li>
+                <li class="nav-item"><a href="/adauga_la_favorite" class="nav-link"><span class="far fa-heart"></span>
+                        Favorite</a></li>
+                <li class="nav-item"><a href="/deconectare" class="nav-link"><span class="fas fa-sign-out-alt"></span>
+                        Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a href="/inregistrare" class="nav-link"><span class="fas fa-user-plus"></span>
+                        Inregistrare</a></li>
+                <li class="nav-item"><a href="/autentificare" class="nav-link"><span class="far fa-user"></span>
+                        Conectare</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,4 @@
+ubd_magazin_server : 'localhost'
+utilizator : 'root'
+parola_server : ''
+baza_date_ubdrone : 'ubdrone'

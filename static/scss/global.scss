@@ -1,0 +1,397 @@
+$culoare-secundara: #fff;
+$placeholder: #BDBDBD;
+$albastru: #1A237E;
+$culoare-principala: #007bff;
+$color: #254568;
+$main-width: 50rem;
+$scrollLength: 100vh;
+
+.logare {
+  .card2 {
+    margin: 0px 40px
+  }
+
+  .logo {
+    margin-top: 20px;
+    margin-left: 42px;
+  }
+
+  .image {
+    width: 360px;
+    height: 280px
+  }
+
+  .border-line {
+    border-right: 2px solid gainsboro;
+  }
+
+  .facebook {
+    background-color: #3b5998;
+    color: $culoare-secundara;
+    font-size: 18px;
+    padding-top: 8px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+  }
+
+  .google {
+    background-color: black;
+    color: $culoare-secundara;
+    font-size: 18px;
+    padding-top: 8px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+  }
+
+
+
+  .line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+  }
+
+  .or {
+    width: 10%;
+    font-weight: bold
+  }
+
+  .text-sm {
+    font-size: 14px !important
+  }
+
+  ::placeholder {
+    color: $placeholder;
+    opacity: 1;
+    font-weight: 300
+  }
+
+  :-ms-input-placeholder {
+    color: $placeholder;
+    font-weight: 300
+  }
+
+  ::-ms-input-placeholder {
+    color: $placeholder;
+    font-weight: 300
+  }
+
+  input,
+  textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+  }
+  input:focus,
+  textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+  }
+
+  button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+  }
+
+  a {
+    color: inherit;
+    cursor: pointer
+  }
+
+  .btn-blue {
+    background-color: $albastru;
+    width: 150px;
+    color: $culoare-secundara;
+    border-radius: 2px
+  }
+
+  .btn-blue:hover {
+    background-color: #000;
+    cursor: pointer
+  }
+
+  .bg-blue {
+    color: $culoare-secundara;
+    background-color: $albastru;
+  }
+
+  @media screen and (max-width: 991px) {
+    .logo {
+      margin-left: 0px
+    }
+
+    .image {
+      width: 300px;
+      height: 220px
+    }
+
+    .border-line {
+      border-right: none
+    }
+
+    .card2 {
+      border-top: 1px solid #EEEEEE !important;
+      margin: 0px 15px
+    }
+  }
+
+  .container-fluid.px-1.px-md-5.px-lg-1.px-xl-5.py-5.mx-auto {
+    padding: 0 0 !Important;
+  }
+
+  .row.d-flex {
+    margin: 0;
+  }
+
+  .inregistraretext {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: rgb(112, 115, 116);
+    font-weight: 300;
+    margin-bottom: 30px;
+    font-family: "Open Sans", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif !important;
+  }
+
+  .logo-inregistrare {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center !important;
+  }
+}
+
+.inregistrarecard2.card.border-0.px-4.py-5 {
+  align-items: center;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom.shadow-sm.fixed-top {
+  position: sticky;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse .input-group {
+    width: 50%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+a:hover {
+  color: $culoare-principala;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $culoare-principala;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+input.form-control.form-control-sm {
+  border-top: 2px solid rgb(2, 120, 213);
+  border-bottom: 2px solid rgb(2, 120, 213);
+  border-left: 2px solid rgb(2, 120, 213);
+  border-image: initial;
+  border-right: none;
+  padding: 0.4em;
+  border-radius: 12px 0px 0px 12px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease-out 0s;
+}
+
+button.btn.btn-success {
+  width: 40px;
+  border: 1px solid rgb(2, 120, 213);
+  background: rgb(2, 120, 213);
+  text-align: center;
+  border-radius: 0px 12px 12px 0px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show>.btn-success.dropdown-toggle {
+  border: 1px solid #0278d5;
+  background: #0278d5;
+}
+
+span.fas {
+  margin: 0px 0.3em;
+}
+
+footer.page-footer.font-small.blue-grey.lighten-5 {
+  background: ghostwhite;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  color: rgb(51, 51, 51);
+  background-color: ghostwhite;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+.home {
+  .card-body {
+
+    text-align: center;
+  }
+}
+a.card-title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  min-height: 35px;
+  font-weight: 700;
+
+}
+
+.card-body h4 {
+  font-family: "Fjalla One", sans-serif;
+  color: rgb(224, 62, 46);
+  font-size: 0.9em;
+  padding-top: 6px;
+  min-height: 46px;
+}
+
+.card.mb-4 {
+  margin: 0.4em;
+  background: rgb(255, 255, 255);
+  transition: all 0.5s ease-in-out 0s;
+  position: relative;
+  border-radius: 12px;
+  border: none;
+}
+
+.card-img-top {
+  border-radius: 12px;
+}
+
+.col-lg-12 h3 {
+  font-family: Open Sans, San Francisco, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.icard1.pb-5 {
+  margin-top: 186px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+
+.back-to-top-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 3em;
+  pointer-events: none;
+}
+
+.back-to-top-link {
+  position: fixed;
+  pointer-events: all;
+  top: calc(100vh - 40px);
+  right: 25px;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 3rem;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px 5px 0 0;
+  padding: 0.25rem;
+  border: 1px solid $color;
+  transition: transform 80ms ease-in;
+  background: #323232;
+  color: #e8e8e8;
+  font-size: 32px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px scale-color($color, $lightness: 50%);
+  }
+}
+
+
+.schimba-parola {
+  h3 {
+    margin-top: 30px;
+}
+}
+
+.card-img-top {
+  background-repeat:no-repeat!important;
+  background-size: cover!important;
+  height:200px;
+  width:100%
+}
+
+.profil {
+.card.card-default.py-2 {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+}
+
+
+
+
+
+

@@ -1,0 +1,217 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+<div id="admin-logat">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="page-header">Editati produsul</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                {% for produs in produs%}
+                                <form role="form" enctype=multipart/form-data class=""
+                                    action="/editare_produs?id={{produs.id}}" method="post">
+                                    <div class="form-group">
+                                        <label>Nume produs</label>
+                                        <input class="form-control" required="required" name="nume"
+                                            value="{{produs.p_nume}}" placeholder="Introdu nume produs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pret</label>
+                                        <input class="form-control" required="required" name="pret"
+                                            value="{{produs.pret}}" placeholder="Pret produs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Descriere</label>
+                                        <textarea class="form-control" required="required" name="descriere" rows="3"
+                                            placeholder="Descriere produs">{{produs.descriere}}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Stoc</label>
+                                        <input class="form-control" required="required" value="{{produs.stoc}}"
+                                            name="stoc" placeholder="stoc">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Categorie</label>
+                                        <select class="form-control" id="categorie_id" onchange="populateList();"
+                                            name="categorie">
+                                            {% if produs.categorie == 'Drone' %}
+                                            <option value="Drone" selected>Drone</option>
+                                            {% else %}
+                                            <option value="Drone">Drone</option>
+                                            {% endif %}
+                                            {% if produs.categorie == 'Accesorii' %}
+                                            <option value="Accesorii" selected>Accesorii</option>
+                                            {% else %}
+                                            <option value="Accesorii">Accesorii</option>
+                                            {% endif %}
+                                            {% if produs.categorie == 'Piese' %}
+                                            <option value="Piese" selected>Piese</option>
+                                            {% else %}
+                                            <option value="Piese">Piese</option>
+                                            {% endif %}
+                                            {% if produs.categorie == 'Baterii' %}
+                                            <option value="Baterii" selected>Baterii</option>
+                                            {% else %}
+                                            <option value="Baterii">Baterii</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                    {% for categorie_de_produs in categorie_de_produs %}
+                                    <div class="form-group level-container">
+                                        {% if produs.categorie == 'Drone' %}
+                                        <label>Adauga din categoria Drone</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline active">
+                                                {% if categorie_de_produs.FPV == 'ok' %}
+                                                <input type="checkbox" checked name="Drone" value="FPV">DJI MAVIC MINI 2
+                                                {% else%}
+                                                <input type="checkbox" name="Drone" value="FPV">DJI MAVIC MINI 2
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.Air == 'ok' %}
+                                                <input type="checkbox" checked name="Drone" value="Air">Air Drone
+                                                {% else%}
+                                                <input type="checkbox" name="Drone" value="Air">Air Drone
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.Mini2 == 'ok' %}
+                                                <input type="checkbox" checked name="Drone" value="Mini2">DJI Air 2S
+                                                {% else%}
+                                                <input type="checkbox" name="Drone" value="Mini2">DJI Air 2S
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_air == 'ok' %}
+                                                <input type="checkbox" checked name="Drone" value="acc_air">DJI MINI 2
+                                                {% else%}
+                                                <input type="checkbox" name="Drone" value="acc_air">DJI MINI 2
+                                                {% endif %}
+                                            </label>
+                                        </div>
+                                        {% endif %}
+                                        {% if produs.categorie == 'Accesorii' %}
+                                        <label>Adauga din categoria Accesorii</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_dji_mavic == 'ok' %}
+                                                <input type="checkbox" checked name="Accesorii"
+                                                    value="acc_dji_mavic">ACCESORII DJI MAVIC
+                                                {% else%}
+                                                <input type="checkbox" name="Accesorii" value="acc_dji_mavic">ACCESORII
+                                                DJI MAVIC
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_fpv== 'ok' %}
+                                                <input type="checkbox" checked name="Accesorii"
+                                                    value="acc_fpv">ACCESORII FPV
+                                                {% else%}
+                                                <input type="checkbox" name="Accesorii" value="acc_fpv">ACCESORII FPV
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_air == 'ok' %}
+                                                <input type="checkbox" checked name="Accesorii"
+                                                    value="acc_air">ACCESORII AIR
+                                                {% else%}
+                                                <input type="checkbox" name="Accesorii" value="acc_air">ACCESORII AIR
+                                                {% endif %}
+                                            </label>
+                                        </div>
+                                        {% endif %}
+                                        {% if produs.categorie == 'Piese' %}
+                                        <label>Adauga din categoria Piese</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_fpv== 'ok' %}
+                                                <input type="checkbox" checked name="Piese" value="acc_fpv">ACCESORII
+                                                FPV
+                                                {% else%}
+                                                <input type="checkbox" name="Piese" value="acc_fpv">ACCESORII FPV
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.brat_motor == 'ok' %}
+                                                <input type="checkbox" checked name="Piese" value="brat_motor">BRATE
+                                                MOTOR
+                                                {% else%}
+                                                <input type="checkbox" name="Piese" value="brat_motor">BRATE MOTOR
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.spare_arm == 'ok' %}
+                                                <input type="checkbox" checked name="Piese" value="spare_arm">ELICE
+                                                {% else%}
+                                                <input type="checkbox" name="Piese" value="spare_arm">ELICE
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_air == 'ok' %}
+                                                <input type="checkbox" checked name="Piese" value="acc_air">ACCESORII
+                                                AIR
+                                                {% else%}
+                                                <input type="checkbox" name="Piese" value="acc_air">ACCESORI AIR
+                                                {% endif %}
+                                            </label>
+                                        </div>
+                                        {% endif %}
+                                        {% if produs.categorie == 'Baterii' %}
+                                        <label>Adauga din categoria Baterii</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.ecoflow == 'ok' %}
+                                                <input type="checkbox" checked name="Baterii" value="ecoflow">ECOFLOW
+                                                {% else%}
+                                                <input type="checkbox" name="Baterii" value="ecoflow">ECOFLOW
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.elistair == 'ok' %}
+                                                <input type="checkbox" checked name="Baterii" value="elistair">ELISTAIR
+                                                {% else%}
+                                                <input type="checkbox" name="Baterii" value="elistair">ELISTAIR
+                                                {% endif %}
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                {% if categorie_de_produs.acc_fpv== 'ok' %}
+                                                <input type="checkbox" name="Baterii" checked value="acc_fpv">ACCESORII
+                                                FPV
+                                                {% else%}
+                                                <input type="checkbox" name="Baterii" value="acc_fpv">ACCESORII FPV
+                                                {% endif %}
+                                            </label>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                    <div class="form-group">
+                                        <label>Item</label>
+                                        <input class="form-control" required="required" name="item"
+                                            value="{{produs.item}}" placeholder="Exemplu: Piese/Baterii">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Cod produs</label>
+                                        <input class="form-control" required="required" value="{{produs.pcod}}"
+                                            name="cod" placeholder="Cod produs">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Salveaza modificarile</button>
+                                </form>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+<div class="comanda-produs">
+    <div class="container my-sm-3">
+        <div class="cart-content">
+            {% for produs in Achizitii %}
+            <h2 class="d-none d-md-block" style="font-family: system-ui;">Vândut și livrat de UBDrone</h2>
+            <div class="panels-wrap d-flex flex-column flex-md-row">
+                <form method="POST" action="/{{produs.categorie}}?comanda={{produs.id}}">
+                    <div class="address">
+                        <div class="tab-content cart-panel" id="pills-tabContent">
+                            <h5 style="font-family: system-ui;">Adresa de livrare</h5>
+                            <div class="form-group field-customer-name required">
+                                {{render_field(form.nume, class_="form-control")}}
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-customer-email required">
+                                {{render_field(form.telefon_num, class_="form-control")}}
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-address-phone required">
+                                {{render_field(form.adresa_strada, class_="form-control")}}
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-address-id_state required">
+                                {{render_field(form.adresa_locatie, class_="form-control")}}
+
+                                <div class="help-block"></div>
+                            </div>
+                            <input type="hidden" id="orderform-is_company" class="form-control"
+                                name="OrderForm[is_company]" value="0">
+                        </div>
+                    </div>
+                    <div class="delivery-pay">
+                        <div class="payment cart-panel">
+                            <h5 style="font-family: system-ui;">Cantitate dorita</h5>
+                            <div class="form-group method field-orderform-payment">
+                                {{render_field(form.cantitate, class_="form-control")}}
+                            </div>
+                            <h5 style="font-family: system-ui;">Metoda plata</h5>
+                            <div class="form-group method field-orderform-payment">
+                                {{render_field(form.modalitate_plata, class_="form-control")}}
+                            </div>
+                        </div>
+
+                        <div class="form-group1">
+                            <button type="submit" class="btn btn-primary">Trimite comanda</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

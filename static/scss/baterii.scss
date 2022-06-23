@@ -1,0 +1,36 @@
+
+.baterii {
+    .card-body {
+      text-align: center;
+    }
+    h5.card-title {
+      margin: 0px;
+      padding: 0px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: black;
+      min-height: 35px;
+      font-weight: 700;
+    }
+    .card.h-100 {
+      background: white;
+      transition: all 0.5s ease-in-out 0s;
+      position: relative;
+      border-radius: 12px;
+      border: none;
+    }
+    h1.my-4 {
+      font-weight: 400;
+      line-height: 1.5;
+      border-bottom: 1px solid #ccc;
+    }
+    a.list-group-item.active {
+      background: none;
+      color: black;
+    }
+    a.list-group-item {
+      border: none;
+      background: none;
+      font-weight: 600;
+    }
+  }

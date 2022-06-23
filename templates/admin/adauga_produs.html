@@ -1,0 +1,119 @@
+{% extends 'admin/layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+<div id="admin-logat">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="page-header">Adauga Produse</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form role="form" enctype=multipart/form-data class="" action="/admin_adauga_produs"
+                                    method="post">
+                                    <div class="form-group">
+                                        <label>Nume produs</label>
+                                        <input class="form-control" required="required" name="nume"
+                                            placeholder="Introdu nume produs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pret</label>
+                                        <input class="form-control" required="required" name="pret"
+                                            placeholder="Pret produs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Descriere</label>
+                                        <textarea class="form-control" required="required" name="descriere"
+                                            placeholder="Descriere produs"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Stoc</label>
+                                        <input class="form-control" required="required" name="stoc" placeholder="Stoc">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Categorie</label>
+                                        <select class="form-control" id="categorie_id" name="categorie">
+                                            <option value="Drone">Drone si Minidrone</option>
+                                            <option value="Accesorii">Accesorii</option>
+                                            <option value="Piese">Piese</option>
+                                            <option value="Baterii">Baterii</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group producator-container">
+                                        <label>Adauga din categoria Drone si Minidrone</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Drone" value="FPV">DJI MAVIC MINI 2
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Drone" value="Air">DJI FPV
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Drone" value="Mini2">DJI Air 2S
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Drone" value="acc_air">DJI MINI 2
+                                            </label>
+                                        </div>
+                                        <label>Adauga din categoria Accesorii</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Accesorii" value="acc_dji_mavic">ACCESORII
+                                                DJI MAVIC
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Accesorii" value="acc_fpv">ACCESORII FPV
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Accesorii" value="acc_air">ACCESORI AIR
+                                            </label>
+                                        </div>
+                                        <label>Adauga din categoria Piese</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Piese" value="brat_motor">BRATE MOTOR
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Piese" value="spare_arm">ELICE
+                                            </label>
+                                        </div>
+                                        <label>Adauga din categoria Baterii</label>
+                                        <div class="form-group">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Baterii" value="ecoflow">ECOFLOW
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="Baterii" value="elistair">ELISTAIR
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Item</label>
+                                        <input class="form-control" required="required" name="item"
+                                            placeholder="Exemplu: Piese/Baterii">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Cod produs</label>
+                                        <input class="form-control" required="required" name="cod"
+                                            placeholder="Cod produs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Adauga imagine</label>
+                                        <input type="file" required="required" name="imagine">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Salveaza modificarile</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

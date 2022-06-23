@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% include 'includes/_flashmsg.html' %}
+{% from "includes/_formhelpers.html" import render_field %}   
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                {% for produs in produse %}
+                <div class="col-md-4 col-md-3">
+                    <div class="col">
+                    <div class="card mb-4">
+                        <a href="/{{produs.categorie}}?vizualizare={{produs.id}}">
+                            <div class="card-img-top" style="background: url('static/imagini/produs/{{produs.categorie}}/{{produs.imagine}}');">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h4><a class="card-title" id="" href="/{{produs.categorie}}?vizualizare={{produs.id}}">{{ produs.p_nume}}</a></h4>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

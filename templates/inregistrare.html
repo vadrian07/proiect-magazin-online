@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/_formhelpers.html" import render_field %}   
+<div class="logare">
+    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+        <div class="card card0 border-0">
+            {% include 'includes/_flashmsg.html' %}
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <div class="icard1 pb-5">
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="/static/imagini/inregistrare-logo.jpg" class="image"> </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="inregistrarecard2 card border-0 px-4 py-5">
+                        <div class="row px-3 mb-4">
+                            <div class="line"></div> 
+                            <div class="line"></div>
+                        </div>
+                        <div class="row px-3"> <label class="mb-1">
+                        <form method="POST" action="">
+                            <div class="logo-inregistrare">
+                                <a href="/">
+                                <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                                    <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                        <img alt="" aria-hidden="true" role="presentation" src="static/imagini/ubdlogo.png">
+                                    </div><img alt="Logo UBDrone" src="static/imagini/ubdlogo.png" style="visibility: visible; position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                                </div>
+                                </a>
+                            </div>
+                            <div class="inregistraretext">INREGISTRARE </div>
+                                <h6 class="mb-0 text-sm">Adresa de email</h6>
+                            {{render_field(form.email, class="form-control")}}
+                        <div class="row px-3"> <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Parola</h6>
+                            {{render_field(form.parola, class="form-control")}}
+                            {{ form.csrf_token }}
+                            {{ form.recaptcha (required='required') }}
+                            {% for error in form.recaptcha.errors %}
+                            <ul>
+                                <li style="color:red;">{{ error }}</li>
+                            {% endfor %}
+                            </ul>
+                        <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Inregistrare</button> </div>
+                        <div class="row mb-4 px-3"> <small class="font-weight-bold">Esti deja inregistrat? <a href="/autentificare" class="text-danger "> Logheaza-te</a></small> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
