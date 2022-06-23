@@ -4,6 +4,7 @@ pe un server local LocalHost, baza de date aparține serverului MySql care este 
 Microsoft Visual Studio Code 2021.
 
 Instructiunile de rulare a magazinului virtual se regasesc intr-un fisier ce poarta denumirea de Instructiuni-rulare-site.
+Sub acest text sunt afisate cateva din paginile site-ului.
 
 ![image](https://user-images.githubusercontent.com/58992508/175260126-38abbfa5-c761-4c09-b3eb-b98f169616bf.png)
 ![image](https://user-images.githubusercontent.com/58992508/175260186-05dc0a90-67d5-4113-9801-122296f9c629.png)
